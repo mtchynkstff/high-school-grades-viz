@@ -21,13 +21,13 @@
 ## How to Run
 ```bash
 pip install -r requirements.txt
-jupyter notebook notebooks/analysis.ipynb
+jupyter notebook notebooks/Virtual-Academy-Grades-Clean.ipynb
 ```
 
 ## Structure
 ```
 .
-├── notebooks/analysis.ipynb
+├── notebooks/Virtual-Academy-Grades-Clean.ipynb
 ├── data/  # raw/processed files
 ├── reports/figures/
 ├── requirements.txt
