@@ -1,50 +1,39 @@
-# 📊 Virtual Academy Grades Analysis
+# High School Semester Grades Visualization
 
-This repository contains a data analysis notebook focused on student grade data from a Virtual Academy program. The project cleans and explores semester grades across multiple school years and grade levels, providing insights into academic trends and performance.
+**Goal:** Visualize pass/fail rates and grade distributions over time and subgroups to inform academic supports.
 
-## 📁 File Overview
+## Project Overview
+- Cleaning & Mapping: Convert letter grades to pass/fail and numeric bins (document mappings).  
+- Cohorts: Define expected grad year; show example formula and edge cases.  
+- Visuals: Trends over semesters; subgroup comparisons with sample sizes and confidence intervals.  
+- Output: Export tidy summary CSV for dashboards; optional Streamlit app for slicing.
 
-- **`Virtual-Academy-Grades-Clean.ipynb`**  
-  The main analysis notebook. It includes:
-  - Cleaning and preprocessing of raw grade data.
-  - Categorization of grades as "Passing" or "Not Passing."
-  - Year-over-year visualizations of student performance.
-  - Disaggregation by grade level and semester.
+## Pass/Fail Mapping (example)
+| Letter | Pass? |
+|---|---|
+| A/B/C | 1 |
+| D | 1 (configurable) |
+| F | 0 |
+| I/NG/WF | excluded or mapped per policy |
 
-## 🧼 Data Cleaning Highlights
+> Tip: Add sensitivity analysis showing how pass rates change if D is excluded.
 
-- Grades are standardized across two semesters.
-- Letter grades are mapped into:
-  - **Passing**: A, B, C, D, P  
-  - **Not Passing**: F, I, NP, NG, WF, *
+## How to Run
+```bash
+pip install -r requirements.txt
+jupyter notebook notebooks/analysis.ipynb
+```
 
-- School years and grade levels are normalized for analysis.
+## Structure
+```
+.
+├── notebooks/analysis.ipynb
+├── data/  # raw/processed files
+├── reports/figures/
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
-## 📈 Key Visualizations
-
-- Overall distribution of passing vs. not passing grades by school year.
-- Semester-specific trends for each student cohort (based on expected graduation year).
-- Bar charts comparing performance across semesters and grade levels.
-
-## 🛠️ Tech Stack
-
-- **Python** (Pandas, Matplotlib, Seaborn)
-- **Jupyter Notebook**
-
-## 🎯 Goals
-
-- Understand performance trends over time in the Virtual Academy.
-- Identify student cohorts or grade levels that may need additional support.
-- Share findings with educators and school leadership to inform decision-making.
-
-## 📌 Notes
-
-- Student data has been anonymized.
-- The analysis is focused on patterns and trends, not individual performance.
-- **Raw student data is not included in this repository due to privacy and confidentiality concerns.**
-
-## ✅ Future Work
-
-- Integrate attendance and testing data for deeper insights.
-- Analyze longitudinal growth or decline per student cohort.
-- Build predictive models to flag at-risk students.
+_Last updated 2025-11-11._
