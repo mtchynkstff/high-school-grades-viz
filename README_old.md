@@ -17,8 +17,41 @@ This repository contains a data analysis notebook focused on student grade data 
 - Letter grades are mapped into:
   - **Passing**: A, B, C, D, P  
   - **Not Passing**: F, I, NP, NG, WF, *
-
 - School years and grade levels are normalized for analysis.
+
+## Pass/Fail Mapping
+
+| Letter | Pass (1/0) | Notes |
+|---|---|---|
+| A | 1 | |
+| B | 1 | |
+| C | 1 | |
+| D | 1 (configurable) | Consider sensitivity: treat D as 0 and observe impact |
+| P | 1 | Pass |
+| F | 0 | Fail |
+| I | 0 or exclude | Incomplete — document your policy |
+| NP | 0 | No Pass |
+| NG | 0 | No Grade |
+| WF | 0 | Withdraw Fail |
+| * | exclude | Any non-standard marks — document before analysis |
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+jupyter notebook "Virtual-Academy-Grades-Clean.ipynb"
+```
+> Note: Raw source data is not included. If you have a similarly-shaped CSV, update the file path in the notebook and rerun the cells.
+
+## Cohorts & Semesters
+
+- **Cohort (expected grad year):** Example — `cohort = entry_year + 4` (adjust to your district policy).  
+- **Semester mapping:** Example — `S1: Aug–Dec`, `S2: Jan–May`. Explicitly list your date ranges to ensure reproducibility.
+
+## Figures (quick-glance)
+
+![Overall pass rate by semester](reports/figures/download-12.png)
+![Subgroup comparison with sample sizes](reports/figures/download-7.png)
 
 ## 📈 Key Visualizations
 
